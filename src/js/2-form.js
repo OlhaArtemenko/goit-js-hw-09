@@ -13,8 +13,8 @@ if (savedData) {
 feedbackForm.addEventListener('input', function (event) {
   // Зберігаємо стан форми в локальному сховищі
   const currentData = {
-    email: feedbackForm.elements.email.value,
-    message: feedbackForm.elements.message.value,
+    email: feedbackForm.elements.email.value.trim(),
+    message: feedbackForm.elements.message.value.trim(),
   };
   localStorage.setItem('feedback-form-state', JSON.stringify(currentData));
 });
@@ -25,8 +25,8 @@ feedbackForm.addEventListener('submit', function (event) {
 
   // Отримуємо поточні значення полів перед їх очищенням
   const formData = {
-    email: feedbackForm.elements.email.value,
-    message: feedbackForm.elements.message.value,
+    email: feedbackForm.elements.email.value.trim(),
+    message: feedbackForm.elements.message.value.trim(),
   };
 
   // Очищення локального сховища та полів форми
